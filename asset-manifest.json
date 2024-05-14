@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/project_page/static/js/main.aa10815d.js",
+    "main.js": "/project_page/static/js/main.3d62e125.js",
     "static/media/amigo.png": "/project_page/static/media/amigo.74140dd9cf6b64a44d3b.png",
     "static/media/wave4.svg": "/project_page/static/media/wave4.9769030227cc07964790cf78454c2e7e.svg",
     "index.html": "/project_page/index.html",
-    "main.aa10815d.js.map": "/project_page/static/js/main.aa10815d.js.map"
+    "main.3d62e125.js.map": "/project_page/static/js/main.3d62e125.js.map"
   },
   "entrypoints": [
-    "static/js/main.aa10815d.js"
+    "static/js/main.3d62e125.js"
   ]
 }
