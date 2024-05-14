@@ -5,7 +5,7 @@ import { IoCloseOutline } from "react-icons/io5";
 import logo from "../assets/logo.png";
 import ContextGlobal from "../contextGlobal/contextGlobal";
 import { IoIosArrowUp } from "react-icons/io";
-
+import SmoothScroll from "smooth-scroll";
 import { FaArrowRight } from "react-icons/fa6";
 
 const slideDown = keyframes`
@@ -101,9 +101,7 @@ const StyledDivIcon = styled.div`
   margin-top: 4px;
   transition: 300ms;
   margin-right: 1.8rem;
-  &:hover {
-    color: #80cbc4;
-  }
+
   @media (min-width: 768px) {
     display: none;
   }
@@ -248,7 +246,7 @@ const StyledTagPContact = styled.p`
   transition: 300ms;
   border: 2px solid #222831;
   border-radius: 13px;
-  padding: 5px 15px 5px 15px;
+  padding: 5px 15px 5px 10px;
   display: flex;
   transition: 200ms;
 
@@ -268,19 +266,21 @@ function NavBar() {
 
   const { aboutRef, skillsRef } = useContext(ContextGlobal);
 
+  const scroll = new SmoothScroll(null, {
+    speed: 1200, // A velocidade da rolagem em milissegundos
+    speedAsDuration: true, // Se verdadeiro, use a velocidade como duração total da rolagem
+  });
+
   const scrollToSection = (sectionRef) => {
     if (sectionRef && sectionRef.current) {
       let marginTop = 0;
       if (window.innerWidth <= 768) {
-        marginTop = -6 * 16;
+        marginTop = -6 * 12;
       } else {
-        marginTop = -85; // ajuste o valor conforme necessário
+        marginTop = -70; // ajuste o valor conforme necessário
       }
       const top = sectionRef.current.offsetTop + marginTop;
-      window.scrollTo({
-        top: top,
-        behavior: "smooth",
-      });
+      scroll.animateScroll(top);
     }
     setIsMenuOpen(false);
   };
@@ -305,10 +305,7 @@ function NavBar() {
   }, []);
 
   const handleScrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth", // Para uma rolagem suave, se desejar
-    });
+    scroll.animateScroll(0);
     setIsMenuOpen(false);
   };
 

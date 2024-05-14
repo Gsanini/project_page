@@ -15,7 +15,7 @@ const StyledDivContainer = styled.div`
   @media (max-width: 768px) {
     display: block;
     padding-top: 8rem;
-    min-height: 100vh;
+    min-height: 110vh;
   }
 `;
 
